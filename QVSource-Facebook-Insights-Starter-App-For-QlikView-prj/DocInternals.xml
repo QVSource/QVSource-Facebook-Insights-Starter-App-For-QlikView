@@ -1,6 +1,71 @@
 ﻿<DocInternals>
-  <AlwaysLoose></AlwaysLoose>
-  <FieldSrcTables></FieldSrcTables>
+  <AlwaysLoose>
+    <bool>false</bool>
+    <bool>false</bool>
+    <bool>false</bool>
+    <bool>false</bool>
+    <bool>false</bool>
+  </AlwaysLoose>
+  <FieldSrcTables>
+    <String>6</String>
+    <String>2</String>
+    <String>TableNames</String>
+    <String>Table</String>
+    <String>7</String>
+    <String>1</String>
+    <String>TableNames</String>
+    <String>8</String>
+    <String>1</String>
+    <String>TableNames</String>
+    <String>9</String>
+    <String>1</String>
+    <String>TableNames</String>
+    <String>10</String>
+    <String>1</String>
+    <String>TableNames</String>
+    <String>11</String>
+    <String>1</String>
+    <String>Table</String>
+    <String>12</String>
+    <String>1</String>
+    <String>Table</String>
+    <String>13</String>
+    <String>1</String>
+    <String>Table</String>
+    <String>14</String>
+    <String>1</String>
+    <String>Table</String>
+    <String>15</String>
+    <String>1</String>
+    <String>Table</String>
+    <String>16</String>
+    <String>1</String>
+    <String>Table</String>
+    <String>17</String>
+    <String>1</String>
+    <String>Table</String>
+    <String>18</String>
+    <String>1</String>
+    <String>Table</String>
+    <String>19</String>
+    <String>1</String>
+    <String>Table</String>
+    <String>20</String>
+    <String>1</String>
+    <String>Table</String>
+    <String>21</String>
+    <String>1</String>
+    <String>Table</String>
+    <String>22</String>
+    <String>1</String>
+    <String>Table</String>
+    <String>23</String>
+    <String>1</String>
+    <String>Table</String>
+    <String>24</String>
+    <String>1</String>
+    <String>Table</String>
+  </FieldSrcTables>
   <TableViewData>
     <Pos></Pos>
     <CtlInfo>
@@ -17,19 +82,19 @@
           </TableViewTableWinSaveInfo>
           <TableViewTableWinSaveInfo>
             <Pos>
-              <Left>870</Left>
-              <Top>507</Top>
-              <Width>317</Width>
+              <Left>884</Left>
+              <Top>366</Top>
+              <Width>129</Width>
               <Height>118</Height>
             </Pos>
             <Caption>TableNames</Caption>
           </TableViewTableWinSaveInfo>
           <TableViewTableWinSaveInfo>
             <Pos>
-              <Left>493</Left>
-              <Top>286</Top>
-              <Width>239</Width>
-              <Height>262</Height>
+              <Left>667</Left>
+              <Top>306</Top>
+              <Width>160</Width>
+              <Height>298</Height>
             </Pos>
             <Caption>Table</Caption>
           </TableViewTableWinSaveInfo>
@@ -84,6 +149,14 @@
   <FieldTags>
     <ScriptBased>
       <FieldTagData>
+        <Tag>$key</Tag>
+        <FieldNames>
+          <String>$Field</String>
+          <String>$Table</String>
+          <String>TableName</String>
+        </FieldNames>
+      </FieldTagData>
+      <FieldTagData>
         <Tag>$hidden</Tag>
         <FieldNames>
           <String>$Field</String>
@@ -110,10 +183,19 @@
         <FieldNames>
           <String>$Field</String>
           <String>$Table</String>
-          <String>$Rows</String>
-          <String>$Fields</String>
-          <String>$FieldNo</String>
           <String>$Info</String>
+          <String>TableName</String>
+          <String>Group</String>
+          <String>Realtime</String>
+          <String>Description</String>
+          <String>Periods</String>
+          <String>Period</String>
+          <String>id</String>
+          <String>name</String>
+          <String>title</String>
+          <String>period</String>
+          <String>end_time</String>
+          <String>description</String>
         </FieldNames>
       </FieldTagData>
       <FieldTagData>
@@ -121,10 +203,61 @@
         <FieldNames>
           <String>$Field</String>
           <String>$Table</String>
+          <String>$Info</String>
+          <String>TableName</String>
+          <String>Group</String>
+          <String>Realtime</String>
+          <String>Description</String>
+          <String>Periods</String>
+          <String>Period</String>
+          <String>id</String>
+          <String>name</String>
+          <String>title</String>
+          <String>period</String>
+          <String>end_time</String>
+          <String>description</String>
+        </FieldNames>
+      </FieldTagData>
+      <FieldTagData>
+        <Tag>$numeric</Tag>
+        <FieldNames>
           <String>$Rows</String>
           <String>$Fields</String>
           <String>$FieldNo</String>
-          <String>$Info</String>
+          <String>end_date_pacific</String>
+          <String>date</String>
+          <String>month</String>
+          <String>week</String>
+          <String>month_year</String>
+          <String>value</String>
+        </FieldNames>
+      </FieldTagData>
+      <FieldTagData>
+        <Tag>$integer</Tag>
+        <FieldNames>
+          <String>$Rows</String>
+          <String>$Fields</String>
+          <String>$FieldNo</String>
+          <String>end_date_pacific</String>
+          <String>date</String>
+          <String>month</String>
+          <String>week</String>
+          <String>month_year</String>
+          <String>value</String>
+        </FieldNames>
+      </FieldTagData>
+      <FieldTagData>
+        <Tag>$timestamp</Tag>
+        <FieldNames>
+          <String>end_date_pacific</String>
+          <String>date</String>
+        </FieldNames>
+      </FieldTagData>
+      <FieldTagData>
+        <Tag>$date</Tag>
+        <FieldNames>
+          <String>end_date_pacific</String>
+          <String>date</String>
         </FieldNames>
       </FieldTagData>
     </ScriptBased>

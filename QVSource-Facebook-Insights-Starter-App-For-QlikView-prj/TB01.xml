@@ -219,7 +219,7 @@
         <Label></Label>
         <Field>
           <Name>title</Name>
-          <Type>NOT_PRESENT</Type>
+          <Type>PRESENT</Type>
         </Field>
         <SortCriteria>
           <SortByState>0</SortByState>
@@ -370,7 +370,7 @@
         <Label></Label>
         <Field>
           <Name>end_time</Name>
-          <Type>NOT_PRESENT</Type>
+          <Type>PRESENT</Type>
         </Field>
         <SortCriteria>
           <SortByState>0</SortByState>
@@ -521,7 +521,7 @@
         <Label></Label>
         <Field>
           <Name>period</Name>
-          <Type>NOT_PRESENT</Type>
+          <Type>PRESENT</Type>
         </Field>
         <SortCriteria>
           <SortByState>0</SortByState>
@@ -672,7 +672,7 @@
         <Label></Label>
         <Field>
           <Name>sub_name</Name>
-          <Type>NOT_PRESENT</Type>
+          <Type>PRESENT</Type>
         </Field>
         <SortCriteria>
           <SortByState>0</SortByState>
@@ -823,7 +823,7 @@
         <Label></Label>
         <Field>
           <Name>value</Name>
-          <Type>NOT_PRESENT</Type>
+          <Type>PRESENT</Type>
         </Field>
         <SortCriteria>
           <SortByState>0</SortByState>

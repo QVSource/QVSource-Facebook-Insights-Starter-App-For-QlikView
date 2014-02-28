@@ -1,4 +1,4 @@
-﻿<!-- Last project change: 2014-02-28 12:27:46 (2014-02-28 11:27:46) -->
+﻿<!-- Last project change: 2014-02-28 12:43:35 (2014-02-28 11:43:35) -->
 <PrjQlikViewProject>
   <GLOBAL>
     <AllPropertiesFileName>AllProperties.xml</AllPropertiesFileName>
@@ -12,7 +12,7 @@
   <SHEETS>
     <PrjSheetProperties>
       <SheetId>Document\SH02</SheetId>
-      <IsActive>true</IsActive>
+      <IsActive>false</IsActive>
       <ChildObjects>
         <PrjFrameParentDef>
           <ObjectId>Document\TX05</ObjectId>
@@ -52,7 +52,7 @@
     </PrjSheetProperties>
     <PrjSheetProperties>
       <SheetId>Document\SH01</SheetId>
-      <IsActive>false</IsActive>
+      <IsActive>true</IsActive>
       <ChildObjects>
         <PrjFrameParentDef>
           <ObjectId>Document\TX02</ObjectId>
@@ -176,9 +176,9 @@
         <PrjFrameParentDef>
           <ObjectId>Document\LB13</ObjectId>
           <Rect>
-            <Left>4109</Left>
-            <Top>31</Top>
-            <Width>609</Width>
+            <Left>4106</Left>
+            <Top>34</Top>
+            <Width>591</Width>
             <Height>2144</Height>
           </Rect>
           <MinimizedRect>
@@ -193,10 +193,10 @@
         <PrjFrameParentDef>
           <ObjectId>Document\LB14</ObjectId>
           <Rect>
-            <Left>4100</Left>
-            <Top>459</Top>
-            <Width>609</Width>
-            <Height>578</Height>
+            <Left>4113</Left>
+            <Top>209</Top>
+            <Width>591</Width>
+            <Height>1047</Height>
           </Rect>
           <MinimizedRect>
             <Left>0</Left>
@@ -212,7 +212,7 @@
           <Rect>
             <Left>2766</Left>
             <Top>1269</Top>
-            <Width>1966</Width>
+            <Width>1941</Width>
             <Height>900</Height>
           </Rect>
           <MinimizedRect>
@@ -262,7 +262,7 @@
           <ObjectId>Document\LB08</ObjectId>
           <Rect>
             <Left>903</Left>
-            <Top>369</Top>
+            <Top>306</Top>
             <Width>450</Width>
             <Height>931</Height>
           </Rect>

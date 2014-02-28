@@ -8,7 +8,7 @@ Version 1.0.0 - 28/20/2014
 //
 // Edit this value to match the id of your facebook page or other
 //
-let vPageId = ''; // <== enter your page id here
+let vPageId = 'qvsource'; // <== enter your page id here
 
 
 //

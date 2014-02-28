@@ -249,7 +249,7 @@
   </Layout>
   <Def>
     <Name>period</Name>
-    <Type>NOT_PRESENT</Type>
+    <Type>PRESENT</Type>
   </Def>
   <Title></Title>
   <PrintSettings>
