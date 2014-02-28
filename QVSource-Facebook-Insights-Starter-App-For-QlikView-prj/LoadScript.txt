@@ -1,0 +1,108 @@
+﻿///$tab Change Log
+/*
+Version 1.0.0 - 28/20/2014
+--------------------------
+* Initial version with new V2 of the Connector.
+*/
+///$tab Config
+//
+// Edit this value to match the id of your facebook page or other
+//
+let vPageId = ''; // <== enter your page id here
+
+
+//
+// Set this date for how far back in time you would like to go.
+//
+let vNumberOfDaysToGoBack = 30;
+
+if(vPageId = '') then
+	trace 'Please set vPageId variable';
+	exit script;
+endif
+///$tab Main
+SET ThousandSep=',';
+SET DecimalSep='.';
+SET MoneyThousandSep=',';
+SET MoneyDecimalSep='.';
+SET MoneyFormat='£#,##0.00;-£#,##0.00';
+SET TimeFormat='hh:mm:ss';
+SET DateFormat='DD/MM/YYYY';
+SET TimestampFormat='DD/MM/YYYY hh:mm:ss[.fff]';
+SET MonthNames='Jan;Feb;Mar;Apr;May;Jun;Jul;Aug;Sep;Oct;Nov;Dec';
+SET DayNames='Mon;Tue;Wed;Thu;Fri;Sat;Sun';
+
+TableNames:
+LOAD
+	TableName,
+	Group,
+	Realtime,
+	Description,
+	Periods
+FROM
+[http://localhost:5555/QVSource/FacebookInsightsConnectorV2/?table=TableNames]
+(qvx)
+where Group = 'Page';
+
+let vtemp = Date(timestamp(now(1)) - vNumberOfDaysToGoBack);
+let vSince = Date(vtemp, 'DD-MM-YYYY');
+
+let vtemp = Date(timestamp(now(1)));
+let vUntil = Date(vtemp, 'DD-MM-YYYY'); // Default to today.
+     
+sub processTableForPeriod(period, metric)
+
+	Table:
+	LOAD
+		'$(metric)' as TableName,
+		'$(period)' as Period,
+		id,
+		name,
+		title,
+		period,
+		end_time,
+/*
+		date#(end_time, 'YYYY-MM-DDThh:mm:ss+0000') as end_time_qvdatetime,
+		date#(subfield(end_time, 'T', 1), 'YYYY-MM-DD') as end_time_qvdate,
+		month(date#(subfield(end_time, 'T', 1), 'YYYY-MM-DD')) as end_time_month,
+		week(date#(subfield(end_time, 'T', 1), 'YYYY-MM-DD')) as end_time_week,
+*/
+		end_date_pacific,
+		date#(subfield(end_date_pacific, 'T', 1), 'YYYY-MM-DD') as date,
+		month(date#(subfield(end_date_pacific, 'T', 1), 'YYYY-MM-DD')) as month,
+		week(date#(subfield(end_date_pacific, 'T', 1), 'YYYY-MM-DD')) as week,
+		dual(mid(end_date_pacific, 6, 2) & '-' & mid(end_date_pacific, 1, 4), mid(end_date_pacific, 6, 2) + 100 * mid(end_date_pacific, 1, 4)) as month_year,
+		sub_name,
+		value,
+		description
+	FROM
+	[http://localhost:5555/QVSource/FacebookInsightsConnectorV2/?table=$(metric)&pageId=$(vPageId)&startDate=$(vSince)&endDate=$(vUntil)&period=$(period)]
+	(qvx);
+
+
+end sub
+
+LET noRows = NoOfRows('TableNames');
+
+for i=0 to $(noRows)-1
+     
+    let tableName = peek('TableName', $(i), 'TableNames');
+    let periods = peek('Periods', $(i), 'TableNames');
+    
+    if(index(periods, 'day') > -1) then
+    	call processTableForPeriod('day', tableName);
+	endif               
+
+    if(index(periods, 'week') > -1) then
+    	call processTableForPeriod('week', tableName);
+	endif
+	
+	if(index(periods, 'days_28') > -1) then
+    	call processTableForPeriod('days_28', tableName);
+	endif
+	
+    if(index(periods, 'lifetime') > -1) then
+    	call processTableForPeriod('lifetime', tableName);
+	endif	
+		
+Next i
