@@ -13,6 +13,6 @@ The content below is copied from the change log in the first tab of the load scr
 
 Change Log
 ----------
-Version 1.0.0 - 28/20/2014
+Version 1.0.0 - 28/02/2014
 --------------------------
 * Initial version with new V2 of the Connector.
