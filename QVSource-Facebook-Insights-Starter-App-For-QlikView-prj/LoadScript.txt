@@ -3,6 +3,10 @@
 Version 1.0.0 - 28/20/2014
 --------------------------
 * Initial version with new V2 of the Connector.
+
+Version 1.0.1 - 01/06/2015
+--------------------------
+* Updated to use V3 of the Connector.
 */
 ///$tab Config
 //
@@ -32,6 +36,8 @@ SET TimestampFormat='DD/MM/YYYY hh:mm:ss[.fff]';
 SET MonthNames='Jan;Feb;Mar;Apr;May;Jun;Jul;Aug;Sep;Oct;Nov;Dec';
 SET DayNames='Mon;Tue;Wed;Thu;Fri;Sat;Sun';
 
+SET errorMode=0;
+
 TableNames:
 LOAD
 	TableName,
@@ -40,7 +46,7 @@ LOAD
 	Description,
 	Periods
 FROM
-[http://localhost:5555/QVSource/FacebookInsightsConnectorV2/?table=TableNames]
+[http://localhost:5555/QVSource/FacebookInsightsConnectorV3/?table=TableNames]
 (qvx)
 where Group = 'Page';
 
@@ -76,7 +82,7 @@ sub processTableForPeriod(period, metric)
 		value,
 		description
 	FROM
-	[http://localhost:5555/QVSource/FacebookInsightsConnectorV2/?table=$(metric)&pageId=$(vPageId)&startDate=$(vSince)&endDate=$(vUntil)&period=$(period)]
+	[http://localhost:5555/QVSource/FacebookInsightsConnectorV3/?table=$(metric)&pageId=$(vPageId)&startDate=$(vSince)&endDate=$(vUntil)&period=$(period)]
 	(qvx);
 
 
@@ -89,19 +95,19 @@ for i=0 to $(noRows)-1
     let tableName = peek('TableName', $(i), 'TableNames');
     let periods = peek('Periods', $(i), 'TableNames');
     
-    if(index(periods, 'day') > -1) then
+    if(index(periods, 'day') > 0) then
     	call processTableForPeriod('day', tableName);
 	endif               
 
-    if(index(periods, 'week') > -1) then
+    if(index(periods, 'week') > 0) then
     	call processTableForPeriod('week', tableName);
 	endif
 	
-	if(index(periods, 'days_28') > -1) then
+	if(index(periods, 'days_28') > 0) then
     	call processTableForPeriod('days_28', tableName);
 	endif
 	
-    if(index(periods, 'lifetime') > -1) then
+    if(index(periods, 'lifetime') > 0) then
     	call processTableForPeriod('lifetime', tableName);
 	endif	
 		

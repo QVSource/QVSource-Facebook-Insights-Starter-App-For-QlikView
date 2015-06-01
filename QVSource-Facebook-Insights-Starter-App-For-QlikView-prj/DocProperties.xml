@@ -828,7 +828,7 @@
     </CalendarStrings>
   </LocaleInfo>
   <HasWorkingDirectory>true</HasWorkingDirectory>
-  <IsPurged>false</IsPurged>
+  <IsPurged>true</IsPurged>
   <Contact></Contact>
   <TimerPollInterval>1</TimerPollInterval>
   <BookmarkSortOrder>
@@ -843,7 +843,7 @@
       <int>3</int>
     </InterOrder>
   </BookmarkSortOrder>
-  <ScriptTabActiveTab>1</ScriptTabActiveTab>
+  <ScriptTabActiveTab>2</ScriptTabActiveTab>
   <ModuleSystemAccessIntended>0</ModuleSystemAccessIntended>
   <InhibitAggressiveQvdCleaning>false</InhibitAggressiveQvdCleaning>
   <Alerts></Alerts>
